@@ -19,8 +19,9 @@ public class Lexer
         foreach (string line in lines)
         {
             if (MatchFunctionDef(line)) continue;
-            if (MatchControlFlow(line)) continue;
+            //if (MatchControlFlow(line)) continue;
             if (MatchFunctionCall(line)) continue;
+            // TODO: Parse extern prototypes
         }
         return tokens;
     }

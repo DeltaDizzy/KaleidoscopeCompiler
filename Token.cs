@@ -9,7 +9,9 @@ public enum TokenType {
     EndGrouping,
     DefineFunction,
     ControlFlow,
-    ExternDeclaration
+    ExternDeclaration,
+    Indent,
+    Dedent
 }
 
 public readonly record struct Token(TokenType Type, string Value);
