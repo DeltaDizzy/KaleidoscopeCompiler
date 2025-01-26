@@ -5,9 +5,9 @@ namespace KaleidoscopeCompiler;
 
 public class Lexer
 {
-    private Regex functionDef = new(@"(def) ([\w]+)(\()(?:(?'arg'\w+) *)+?(\))");
-    private Regex controlFlowIf = new(@"(?:[^\S\r\n]+)(if) ([\w]+) (<|>|is|not|\+|-|\*|\\)* (\d+) then");
-    private Regex functionCall = new(@"(\w+)(\()(\w+|\.?\d+)(\))");
+    private readonly Regex functionDef = new(@"(def) ([\w]+)(\()(?:(?'arg'\w+) *)+?(\))");
+    private readonly Regex controlFlowIf = new(@"(?:[^\S\r\n]+)(if) ([\w]+) (<|>|is|not|\+|-|\*|\\)* (\d+) then");
+    private readonly Regex functionCall = new(@"(\w+)(\()(\w+|\.?\d+)(\))");
     private List<Token> tokens = [];
     private string[] lines = [];
 
