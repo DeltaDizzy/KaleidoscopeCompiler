@@ -1,4 +1,5 @@
 ﻿using KaleidoscopeCompiler;
+using KaleidoscopeCompiler.AST;
 
 FileInfo testFile = new(@"/home/emily/projects/KaleidoscopeCompiler/test2.ks");
 Lexer lexer = new();
@@ -8,3 +9,5 @@ foreach (Token token in tokens)
 {
     Console.WriteLine(token);
 }
+
+List<AST> astNodes = Parser.ParseAST(tokens);
