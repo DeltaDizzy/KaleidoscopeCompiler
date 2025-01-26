@@ -1,6 +1,7 @@
 namespace KaleidoscopeCompiler.AST;
 
-public record class ExpressionAST {}
+public record class AST {}
+public record class ExpressionAST : AST {}
 
 public record class NumberExpressionAST : ExpressionAST {
     public required double Value { get; init; }
@@ -21,12 +22,12 @@ public record class CallExpressionAST : ExpressionAST {
     public required List<ExpressionAST> Arguments { get; init; }
 }
 
-public record class PrototypeAST {
+public record class PrototypeAST : AST {
     public required string FunctionName { get; init; }
     public required List<string> Arguments { get; init; }
 }
 
-public record class FunctionAST {
+public record class FunctionAST : AST {
     public required PrototypeAST Proto { get; init; }
     public required ExpressionAST Body { get; init; }
 }
